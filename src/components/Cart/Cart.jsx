@@ -3,6 +3,7 @@ import classes from "./Cart.module.css";
 import ModalOverlay from "../UI/Modal/ModalOverlay";
 import CartContext from "../../context/cart-context";
 import CartItem from "./CartItems";
+import CartTotalPrice from "./CartTotalPrice";
 
 const Cart = (props) => {
   const cartCtx = useContext(CartContext);
@@ -31,7 +32,19 @@ const Cart = (props) => {
           </li>
         ))}
       </ul>
-      <div className={classes["total"]}></div>
+      <div className={classes["total"]}>
+        <p>Total Amount</p>
+        <CartTotalPrice />
+        <div className={classes["actions"]}>
+          <button
+            className={classes["button--alt"]}
+            onClick={props.onHideModal}
+          >
+            Close
+          </button>
+          <button className={classes["button"]}>Order</button>
+        </div>
+      </div>
     </ModalOverlay>
   );
 };

@@ -16,7 +16,7 @@ const Modal = (props) => {
       )}
 
       {ReactDOM.createPortal(
-        <Cart />,
+        <Cart onHideModal={props.onHideModal}/>,
         document.getElementById("overlay-root")
       )}
     </React.Fragment>

@@ -1,7 +1,7 @@
 import classes from './CartItems.module.css';
 
 const CartItem = (props) => {
-  const price = `$${parseInt(props.price).toFixed(2)}`;
+  const price = `$${parseFloat(props.price).toFixed(2)}`;
 
   const onAddHandler = () => {
     props.onAdd(props.meal, 1);

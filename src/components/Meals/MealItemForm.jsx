@@ -9,19 +9,26 @@ const MealItemForm = (props) => {
 
   const amountChangeHandler = (event) => {
     setAmount(event.target.value);
-  }
+  };
 
   const addMealToCart = (event) => {
     event.preventDefault();
-    cartContext.onAddToCart(props.meal, amount)
-  }
+    cartContext.onAddToCart(props.meal, amount);
+    setAmount("1");
+  };
 
   return (
     <form className={classes["form"]}>
-      <Input type="number" label="Amount" id="amount" value={amount} onChange={amountChangeHandler} />
+      <Input
+        type="number"
+        label="Amount"
+        id="amount"
+        value={amount}
+        onChange={amountChangeHandler}
+      />
       <button onClick={addMealToCart}>+Add</button>
     </form>
-  )
-}
+  );
+};
 
 export default MealItemForm;

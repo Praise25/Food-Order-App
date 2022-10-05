@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 
 const CartContext = React.createContext({
   cart: [],
@@ -8,9 +8,6 @@ const CartContext = React.createContext({
 
 export const CartContextProvider = (props) => {
   const [cart, setCart] = useState([]);
-  useEffect(() => {
-    console.log(cart);
-  }, [cart]);
 
   const isInCart = (meal) => {
     let hasMeal = false;
@@ -45,11 +42,9 @@ export const CartContextProvider = (props) => {
       foundItem["amount"] = (parseInt(foundItem["amount"]) - 1).toString();
     }
     if (parseInt(foundItem["amount"]) < 1) {
-      setCart((prev) => (
-        prev.filter((item) => (!(item.id === foundItem.id)))
-      ));
+      setCart((prev) => prev.filter((item) => !(item.id === foundItem.id)));
     } else {
-      setCart((prev) => ([...prev]));
+      setCart((prev) => [...prev]);
     }
   };
 

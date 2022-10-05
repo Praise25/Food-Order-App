@@ -1,6 +1,5 @@
-import React from "react";
 import CartIcon from "./CartIcon";
-import classes from "./HeaderCartButton.module.css"
+import classes from "./HeaderCartButton.module.css";
 import HeaderCountBadge from "./HeaderCountBadge";
 
 const HeaderCartButton = (props) => {
@@ -12,7 +11,7 @@ const HeaderCartButton = (props) => {
         <HeaderCountBadge className={classes["badge"]} />
       </button>
     </div>
-  )
-}
+  );
+};
 
 export default HeaderCartButton;
