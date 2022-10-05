@@ -1,0 +1,24 @@
+Components that require access to the cart state
+  - HeaderCountBadge
+  - Cart
+  - MealItem
+
+  cart = 
+  [
+    {
+    meal: {},
+    amount: num
+    },
+    {
+    meal: {},
+    amount: num
+    },
+    {
+    meal: {},
+    amount: num
+    },
+    {
+    meal: {},
+    amount: num
+    },
+  ]
